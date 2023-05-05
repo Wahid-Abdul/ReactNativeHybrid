@@ -1,0 +1,4 @@
+<resources>
+    <string name="colorPrimary">#FF000000</string>
+    <attr format="color" name="colorPrimary"/>
+</resources>

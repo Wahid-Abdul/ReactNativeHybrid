@@ -33,7 +33,9 @@ const DashboardIndex = (props) => {
 
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
+			<Stack.Navigator screenOptions={({ route, navigation }) => ({
+					headerShown: false,
+				})}>
 				<Stack.Screen name="Home" component={HomeScreen} />
 				<Stack.Screen name="SecondScreen" component={SecondScreen} />
 			</Stack.Navigator>

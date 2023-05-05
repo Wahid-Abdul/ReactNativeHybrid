@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
 // Module name
 AppRegistry.registerComponent('DashboardIndex', () => DashboardIndex);
 AppRegistry.registerComponent('SettingsIndex', () => SettingsIndex);
-// AppRegistry.registerComponent('RNHighScores', () => RNHighScores);
+AppRegistry.registerComponent('RNHighScores', () => DashboardIndex);
