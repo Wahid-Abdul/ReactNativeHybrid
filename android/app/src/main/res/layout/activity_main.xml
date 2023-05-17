@@ -16,12 +16,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/rn_button"
+        android:id="@+id/rn_settings"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="Go to settings"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <Button
+        android:id="@+id/rn_dashboard"
+        style="bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to RN"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="491dp"
-        tools:ignore="MissingConstraints" />
+        android:text="Go to dashboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="140dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

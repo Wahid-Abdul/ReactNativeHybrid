@@ -64,6 +64,31 @@ public class MainActivity extends AppCompatActivity {
 //        Bundle initialProps = new Bundle();
 //        initialProps.putSerializable("name", scoreMap);
 //        initialProps.putString("value", "42");
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!! ---> 2");
+        mReactInstanceManager = ReactInstanceManager.builder()
+                        .setApplication(getApplication())
+                        .setCurrentActivity(this)
+                        .setBundleAssetName("index.android.bundle")
+                        .setJSMainModulePath("index")
+                        .addPackages(packages)
+                        .setUseDeveloperSupport(BuildConfig.DEBUG)
+                        .setInitialLifecycleState(LifecycleState.RESUMED)
+                        .build();
+                // The string here (e.g. "MyReactNativeApp") has to match
+                // the string in AppRegistry.registerComponent() in index.js
+                mReactRootView.startReactApplication(mReactInstanceManager, "SettingsIndex", null);
+
+                setContentView(mReactRootView);
+
+    }
+
+    public void gotoDashboard(){
+        SoLoader.init(this, false);
+                mReactRootView = new ReactRootView(this);
+                List<ReactPackage> packages = new PackageList(getApplication()).getPackages();
+                // Packages that cannot be autolinked yet can be added manually here, for example:
+                // packages.add(new MyReactNativePackage());
+                // Remember to include them in `settings.gradle` and `app/build.gradle` too.
 
         mReactInstanceManager = ReactInstanceManager.builder()
                         .setApplication(getApplication())
@@ -76,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         .build();
                 // The string here (e.g. "MyReactNativeApp") has to match
                 // the string in AppRegistry.registerComponent() in index.js
-                mReactRootView.startReactApplication(mReactInstanceManager, "RNHighScores", null);
+                mReactRootView.startReactApplication(mReactInstanceManager, "DashboardIndex", null);
 
                 setContentView(mReactRootView);
 
@@ -88,10 +113,19 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        final Button button = findViewById(R.id.rn_button);
+        final Button button = findViewById(R.id.rn_settings);
+        final Button dashbaordButton = findViewById(R.id.rn_dashboard);
+
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!! ---> 1");
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onRNClick();
+            }
+        });
+
+        dashbaordButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gotoDashboard();
             }
         });
 
