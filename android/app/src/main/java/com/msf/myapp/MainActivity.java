@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 // Packages that cannot be autolinked yet can be added manually here, for example:
                 // packages.add(new MyReactNativePackage());
                 // Remember to include them in `settings.gradle` and `app/build.gradle` too.
-
+                packages.add(new MyAppPackage());
 //        HashMap<String, String> temp = new HashMap<>();
 //        temp.put("name", "Alex");
 //        temp.put("value", "42");
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 // Packages that cannot be autolinked yet can be added manually here, for example:
                 // packages.add(new MyReactNativePackage());
                 // Remember to include them in `settings.gradle` and `app/build.gradle` too.
-
+                packages.add(new MyAppPackage());
         mReactInstanceManager = ReactInstanceManager.builder()
                         .setApplication(getApplication())
                         .setCurrentActivity(this)

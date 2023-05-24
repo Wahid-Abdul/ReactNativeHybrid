@@ -3,6 +3,9 @@ import { View, Text, StyleSheet, AppRegistry, Image } from "react-native";
 import ImageIcon from '../svg/ImageIcon';
 import Svg, { Circle } from 'react-native-svg';
 // import * from "./../../assets/"
+import {NativeModules, TouchableOpacity} from 'react-native';
+const {CalendarModule} = NativeModules;
+
 const SettingsIndex = (props: any) => {
     useEffect(() => {
         console.log('%%%%%%%%%%%%%%%%%%', props)
@@ -11,8 +14,15 @@ const SettingsIndex = (props: any) => {
     return (
     <View style={styles.container}>
         <Text style={styles.highScoresTitle}>
-            I am a Settings screen
+            I am a Settings screen !!
         </Text>
+        <TouchableOpacity
+          onPress={() => {
+            CalendarModule.createCalendarEvent('Pandi', 'Madurai');
+            console.log('QQQQQQQ', CalendarModule.createCalendarEvent);
+          }}>
+          <Text>Calendar loggg </Text>
+        </TouchableOpacity>
         <Image source={require("./../../assets/book.png")} style={{height: 100, width: 100}}/>
         <View style={{height: 100, width: 100}}>
             {/* <ImageIcon /> */}
