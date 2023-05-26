@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
 });
 
 // Module name
-AppRegistry.registerComponent('DashboardIndex', () => DashboardIndex);
+// AppRegistry.registerComponent('DashboardIndex', () => DashboardIndex);
 AppRegistry.registerComponent('SettingsIndex', () => SettingsIndex);
-AppRegistry.registerComponent('RNHighScores', () => DashboardIndex);
+// AppRegistry.registerComponent('RNHighScores', () => DashboardIndex);

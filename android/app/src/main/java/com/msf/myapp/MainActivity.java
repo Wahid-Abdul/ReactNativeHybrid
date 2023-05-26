@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.facebook.react.BuildConfig;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactPackage;
@@ -18,7 +19,9 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.microsoft.codepush.react.CodePush;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -44,45 +47,43 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onRNClick(){
+    public void onRNClick() {
         SoLoader.init(this, false);
-                mReactRootView = new ReactRootView(this);
-                List<ReactPackage> packages = new PackageList(getApplication()).getPackages();
-                // Packages that cannot be autolinked yet can be added manually here, for example:
-                // packages.add(new MyReactNativePackage());
-                // Remember to include them in `settings.gradle` and `app/build.gradle` too.
-                packages.add(new MyAppPackage());
-//        HashMap<String, String> temp = new HashMap<>();
-//        temp.put("name", "Alex");
-//        temp.put("value", "42");
-//        ArrayList<HashMap<String, String>> scoreMap = new ArrayList<>();
-//        scoreMap.add(temp);
-//        scoreMap[0].put("name", "Alex");
-//        scoreMap[0].put("value", "42");
-//        scoreMap[1].put("name", "Joel");
-//        scoreMap[1].put("value", "10");
-//        Bundle initialProps = new Bundle();
-//        initialProps.putSerializable("name", scoreMap);
-//        initialProps.putString("value", "42");
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!! ---> 2");
-        mReactInstanceManager = ReactInstanceManager.builder()
-                        .setApplication(getApplication())
-                        .setCurrentActivity(this)
-                        .setBundleAssetName("index.android.bundle")
-                        .setJSMainModulePath("index")
-                        .addPackages(packages)
-                        .setUseDeveloperSupport(BuildConfig.DEBUG)
-                        .setInitialLifecycleState(LifecycleState.RESUMED)
-                        .build();
-                // The string here (e.g. "MyReactNativeApp") has to match
-                // the string in AppRegistry.registerComponent() in index.js
-                mReactRootView.startReactApplication(mReactInstanceManager, "SettingsIndex", null);
+        mReactRootView = new ReactRootView(this);
+        List<ReactPackage> packages = new ArrayList<>();
+        // Packages that cannot be autolinked yet can be added manually here, for example:
+//        packages.add(new MyReactNativePackage());
+        // Remember to include them in `settings.gradle` and `app/build.gradle` too.
+        packages.add(new MainReactPackage());
+        packages.add(new MyAppPackage());
+        packages.add(new CodePush("mVATLWhFstewz3si373z52af46uwbXeKOtk6Q", getApplicationContext(), BuildConfig.DEBUG));
 
-                setContentView(mReactRootView);
+        String bundle = CodePush.getJSBundleFile();
+
+        mReactInstanceManager = ReactInstanceManager.builder()
+                // ...
+                // Add CodePush package
+                .setApplication(getApplication())
+                .setCurrentActivity(this)
+                .addPackages(packages)
+//                .addPackage(new MyAppPackage())
+//                .addPackage(new MainReactPackage())
+//                .addPackage(new CodePush("mVATLWhFstewz3si373z52af46uwbXeKOtk6Q", getApplicationContext(), BuildConfig.DEBUG))
+                .setBundleAssetName("index.android.bundle")
+                .setJSMainModulePath("index")
+                // Get the JS Bundle File via Code Push
+                .setJSBundleFile(bundle)
+                // ...
+                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                .setInitialLifecycleState(LifecycleState.RESUMED)
+                .build();
+        mReactRootView.startReactApplication(mReactInstanceManager, "SettingsIndex", null);
+
+        setContentView(mReactRootView);
 
     }
 
-    public void gotoDashboard(){
+    public void gotoDashboard() {
         SoLoader.init(this, false);
                 mReactRootView = new ReactRootView(this);
                 List<ReactPackage> packages = new PackageList(getApplication()).getPackages();
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
