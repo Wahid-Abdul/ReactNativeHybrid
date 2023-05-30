@@ -14,6 +14,8 @@
 		EA07583029F92AF700E85F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA07582E29F92AF700E85F41 /* Main.storyboard */; };
 		EA07583229F92AF900E85F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA07583129F92AF900E85F41 /* Assets.xcassets */; };
 		EA07583529F92AF900E85F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA07583329F92AF900E85F41 /* LaunchScreen.storyboard */; };
+		EA0DC7132A2474C600819292 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = EA0DC7122A2474C600819292 /* main.jsbundle */; };
+		EAF574F92A20C51D00CAD777 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAF574F82A20C51D00CAD777 /* AppCenter-Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EA07583129F92AF900E85F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA07583429F92AF900E85F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA07583629F92AF900E85F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA0DC7122A2474C600819292 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.jsbundle; sourceTree = SOURCE_ROOT; };
+		EAF574F82A20C51D00CAD777 /* AppCenter-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 		EA07582729F92AF700E85F41 /* MyApp */ = {
 			isa = PBXGroup;
 			children = (
+				EA0DC7122A2474C600819292 /* main.jsbundle */,
+				EAF574F82A20C51D00CAD777 /* AppCenter-Config.plist */,
 				EA07582829F92AF700E85F41 /* AppDelegate.swift */,
 				EA07582A29F92AF700E85F41 /* SceneDelegate.swift */,
 				EA07582C29F92AF700E85F41 /* ViewController.swift */,
@@ -80,7 +86,6 @@
 				B85E42383A2821C28E1CE002 /* Pods-MyApp.debug.xcconfig */,
 				E01372065D72980F50F76945 /* Pods-MyApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA07583529F92AF900E85F41 /* LaunchScreen.storyboard in Resources */,
+				EAF574F92A20C51D00CAD777 /* AppCenter-Config.plist in Resources */,
+				EA0DC7132A2474C600819292 /* main.jsbundle in Resources */,
 				EA07583229F92AF900E85F41 /* Assets.xcassets in Resources */,
 				EA07583029F92AF700E85F41 /* Main.storyboard in Resources */,
 			);
@@ -355,8 +362,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5CNN55283J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -368,9 +378,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msf.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "MSF WILDCARD DEVELOPMENT PROFILE";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -383,8 +395,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5CNN55283J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -396,9 +411,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.msf.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "MSF WILDCARD DEVELOPMENT PROFILE";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

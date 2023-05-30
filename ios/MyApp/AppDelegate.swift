@@ -7,6 +7,16 @@
 
 import UIKit
 
+import CodePush
+
+import AppCenter
+import AppCenterReactNativeShared
+import AppCenterCrashes
+import appcenter_core
+import appcenter_crashes
+import AppCenterAnalytics
+import appcenter_analytics
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -14,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AppCenterReactNative.register()
+        AppCenterReactNativeAnalytics.register(withInitiallyEnabled: true)
+        AppCenterReactNativeCrashes.registerWithAutomaticProcessing()
+
         return true
     }
 

@@ -26,5 +26,5 @@ target 'MyApp' do
   # use_react_native!
   # use_native_modules!
   # Pods for MyApp
-
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
 end

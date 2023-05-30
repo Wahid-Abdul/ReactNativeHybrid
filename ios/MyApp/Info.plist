@@ -23,14 +23,20 @@
 	</dict>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-    <key>NSExceptionDomains</key>
-    <dict>
-        <key>localhost</key>
-        <dict>
-            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-            <true/>
-        </dict>
-    </dict>
-</dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>CFBundleDisplayName</key>
+	<string>MyApp</string>
+	<key>CodePushDeploymentKey</key>
+	<string>fGGY7vCmj_KMaUpOi26BC2wr0NHvHRXL3_KWe</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
 </dict>
 </plist>

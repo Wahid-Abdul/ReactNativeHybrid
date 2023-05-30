@@ -1,9 +1,11 @@
 {
-  "name": "MyReactNativeApp",
+  "name": "MyApp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn react-native start"
+    "start": "yarn react-native start",
+    "build-ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/MyApp/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
+    "codepush-ios": " appcenter codepush release-react -a abdulwahid.ag/hybridios -d Staging --plist-file ios/MyApp/Info.plist"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.6",
@@ -15,7 +17,7 @@
     "appcenter-crashes": "4.4.5",
     "react": "18.2.0",
     "react-native": "^0.71.7",
-    "react-native-code-push": "^8.0.1",
+    "react-native-code-push": "^8.0.2",
     "react-native-safe-area-context": "^4.5.2",
     "react-native-screens": "^3.20.0",
     "react-native-svg": "^13.9.0",

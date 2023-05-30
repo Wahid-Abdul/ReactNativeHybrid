@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
-import ImageIcon from '../svg/ImageIcon';
-import Svg, { Circle } from 'react-native-svg';
+// import ImageIcon from '../svg/ImageIcon';
+// import Svg, { Circle } from 'react-native-svg';
 import codePush from "react-native-code-push";
 
 // import * from "./../../assets/"
 import {NativeModules, TouchableOpacity} from 'react-native';
-const {CalendarModule} = NativeModules;
+// const {CalendarModule} = NativeModules;
 
 let codePushOptions = {
   checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
@@ -22,8 +22,18 @@ const SettingsIndex = (props: any) => {
 
     
     useEffect(() => {
-        console.log('%%%%%%%%%%%%%%%%%%', props)
+        console.log('%%%%%%%%%%%%%%%%%%', props) 
       }, [])
+
+      const checkifUpdatesAvailable = () => {
+        codePush.checkForUpdate().then(update => {
+          // if (!update) {
+              alert(update)
+          // }else{
+
+          // }
+      })
+      }
 
       const addLog = (log: any) => {
         setLogs((prevLogs) => [...prevLogs, `${log}`]);
@@ -49,40 +59,39 @@ const SettingsIndex = (props: any) => {
     const handleBinaryVersionMismatchCallback = () => {}
     
     const onUpdateCheck = () => {
-        // alert('checking')
+
         const temp = codePush.sync({
             // updateDialog: true,
-            installMode: codePush.InstallMode.IMMEDIATE,
+            installMode: codePush.InstallMode.ON_NEXT_RESTART,
         }, syncStatusChangeCallback, downloadProgressCallback, handleBinaryVersionMismatchCallback);
         // const temp = codePush.sync({
         //     // updateDialog: true,
         //     installMode: codePush.InstallMode.ON_NEXT_RESTART,
         // });
-        alert(JSON.stringify(temp))
-    };
+      };
 
     return (
     <View style={styles.container}>
         <Text style={styles.highScoresTitle}>
-            I am a Settings screen v0.0.24 !!
+            I am a Settings screen v0.0.47 !!
         </Text>
-        {/* <TouchableOpacity
+        <TouchableOpacity
             style={{
                 backgroundColor: 'lightgreen', borderRadius: 5,
                 width: 200, height: 50,
                 alignItems: 'center', justifyContent: 'center'
             }}
-          onPress={onUpdateCheck}>
+          onPress={checkifUpdatesAvailable}>
           <Text>CHECK FOR UPDATES !</Text>
-        </TouchableOpacity> */}
-        <TouchableOpacity
+        </TouchableOpacity>
+        {/* <TouchableOpacity
           onPress={() => {
             CalendarModule.createCalendarEvent('Pandi', 'Madurai');
             console.log('QQQQQQQ', CalendarModule.createCalendarEvent);
           }}>
           <Text>Calendar loggg </Text>
-        </TouchableOpacity>
-        <Image source={require("./../../assets/book.png")} style={{height: 100, width: 100}}/>
+        </TouchableOpacity> */}
+        {/* <Image source={require("./../../assets/book.png")} style={{height: 100, width: 100}}/> */}
         {/* <View style={{height: 100, width: 100}}>
                 <Svg height="50%" width="50%" viewBox="0 0 100 100" >
                     <Circle cx="50" cy="50" r="50" stroke="purple" strokeWidth=".5" fill="violet" />
