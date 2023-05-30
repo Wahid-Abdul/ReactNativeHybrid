@@ -4920,10 +4920,10 @@ react-is@^18.0.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-native-code-push@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.npmjs.org/react-native-code-push/-/react-native-code-push-8.0.1.tgz"
-  integrity sha512-I8cKKTVVOdsNwXZOHjajcBtri0qn6CMzSVn7xqmT8r/BioudTUJpSDniFP+xAiUiWDva5I+OwSn1xlReVjcJwg==
+react-native-code-push@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.npmjs.org/react-native-code-push/-/react-native-code-push-8.0.2.tgz"
+  integrity sha512-0ATo6n2HZ+xAXjuM7MfL5BBul/MhOyUpO0DGUelzFOmvxVfjS+yURQYscRWMhg9nurlIbJz3zGcsbOopF1ZIgw==
   dependencies:
     code-push "^4.1.0"
     glob "^7.1.7"

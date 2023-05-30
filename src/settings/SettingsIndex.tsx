@@ -73,7 +73,7 @@ const SettingsIndex = (props: any) => {
     return (
     <View style={styles.container}>
         <Text style={styles.highScoresTitle}>
-            I am a Settings screen v0.0.47 !!
+            I am a Settings screen v0.0.49 !!
         </Text>
         <TouchableOpacity
             style={{

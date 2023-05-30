@@ -21,6 +21,7 @@ import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.horcrux.svg.SvgPackage;
 import com.microsoft.codepush.react.CodePush;
 
 import java.sql.Array;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         // Remember to include them in `settings.gradle` and `app/build.gradle` too.
         packages.add(new MainReactPackage());
         packages.add(new MyAppPackage());
+        packages.add(new SvgPackage());
         packages.add(new CodePush("mVATLWhFstewz3si373z52af46uwbXeKOtk6Q", getApplicationContext(), BuildConfig.DEBUG));
 
         String bundle = CodePush.getJSBundleFile();
@@ -85,28 +87,58 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotoDashboard() {
         SoLoader.init(this, false);
-                mReactRootView = new ReactRootView(this);
-                List<ReactPackage> packages = new PackageList(getApplication()).getPackages();
-                // Packages that cannot be autolinked yet can be added manually here, for example:
-                // packages.add(new MyReactNativePackage());
-                // Remember to include them in `settings.gradle` and `app/build.gradle` too.
-                packages.add(new MyAppPackage());
-        mReactInstanceManager = ReactInstanceManager.builder()
-                        .setApplication(getApplication())
-                        .setCurrentActivity(this)
-                        .setBundleAssetName("index.android.bundle")
-                        .setJSMainModulePath("index")
-                        .addPackages(packages)
-                        .setUseDeveloperSupport(BuildConfig.DEBUG)
-                        .setInitialLifecycleState(LifecycleState.RESUMED)
-                        .build();
-                // The string here (e.g. "MyReactNativeApp") has to match
-                // the string in AppRegistry.registerComponent() in index.js
-                mReactRootView.startReactApplication(mReactInstanceManager, "DashboardIndex", null);
+        mReactRootView = new ReactRootView(this);
+        List<ReactPackage> packages = new ArrayList<>();
+        // Packages that cannot be autolinked yet can be added manually here, for example:
+//        packages.add(new MyReactNativePackage());
+        // Remember to include them in `settings.gradle` and `app/build.gradle` too.
+        packages.add(new MainReactPackage());
+        packages.add(new MyAppPackage());
+        packages.add(new CodePush("mVATLWhFstewz3si373z52af46uwbXeKOtk6Q", getApplicationContext(), BuildConfig.DEBUG));
 
-                setContentView(mReactRootView);
+        String bundle = CodePush.getJSBundleFile();
+
+        mReactInstanceManager = ReactInstanceManager.builder()
+                .setApplication(getApplication())
+                .setCurrentActivity(this)
+                .addPackages(packages)
+                .setBundleAssetName("index.android.bundle")
+                .setJSMainModulePath("index")
+                .setJSBundleFile(bundle)
+                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                .setInitialLifecycleState(LifecycleState.RESUMED)
+                .build();
+        mReactRootView.startReactApplication(mReactInstanceManager, "DashboardIndex", null);
+
+        setContentView(mReactRootView);
+
+
 
     }
+//    public void gotoDashboard() {
+//        SoLoader.init(this, false);
+//                mReactRootView = new ReactRootView(this);
+//                List<ReactPackage> packages = new PackageList(getApplication()).getPackages();
+//                // Packages that cannot be autolinked yet can be added manually here, for example:
+//                // packages.add(new MyReactNativePackage());
+//                // Remember to include them in `settings.gradle` and `app/build.gradle` too.
+//                packages.add(new MyAppPackage());
+//        mReactInstanceManager = ReactInstanceManager.builder()
+//                        .setApplication(getApplication())
+//                        .setCurrentActivity(this)
+//                        .setBundleAssetName("index.android.bundle")
+//                        .setJSMainModulePath("index")
+//                        .addPackages(packages)
+//                        .setUseDeveloperSupport(BuildConfig.DEBUG)
+//                        .setInitialLifecycleState(LifecycleState.RESUMED)
+//                        .build();
+//                // The string here (e.g. "MyReactNativeApp") has to match
+//                // the string in AppRegistry.registerComponent() in index.js
+//                mReactRootView.startReactApplication(mReactInstanceManager, "DashboardIndex", null);
+//
+//                setContentView(mReactRootView);
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
