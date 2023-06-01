@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303078378092",
+    "project_id": "hybridandroid-df974",
+    "storage_bucket": "hybridandroid-df974.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303078378092:android:2e71497dcd87d3287be649",
+        "android_client_info": {
+          "package_name": "com.msf.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTydZ5fC4ZQEfxpL-sqMsBGLPcoamEaOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

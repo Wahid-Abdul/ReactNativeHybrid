@@ -33,7 +33,7 @@ function HomeScreen() {
 
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-			<Text>Home Screen</Text>
+			<Text>Home Screen v0.0.1</Text>
 
 			<TouchableOpacity onPress={() => navigation.navigate('SecondScreen')} style={{height:50, width: 200, backgroundColor: 'lightblue', borderRadius: 10, alignItems: 'center', justifyContent: 'center'}}>
 				<Text>Go to next screen</Text>
@@ -59,7 +59,7 @@ const DashboardIndex = (props: any) => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={({ route, navigation }) => ({
-					headerShown: true,
+					headerShown: false,
 				})}>
 				<Stack.Screen name="Home" component={HomeScreen} />
 				<Stack.Screen name="SecondScreen" component={SecondScreen} />

@@ -5,7 +5,9 @@
   "scripts": {
     "start": "yarn react-native start",
     "build-ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/MyApp/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'",
-    "codepush-ios": " appcenter codepush release-react -a abdulwahid.ag/hybridios -d Staging --plist-file ios/MyApp/Info.plist"
+    "codepush-ios": " appcenter codepush release-react -a abdulwahid.ag/hybridios -d Staging --plist-file ios/MyApp/Info.plist",
+    "codepush-android": "appcenter codepush release-react -a abdulwahid.ag/hybridAndroid -d Staging",
+    "codepush-all": "npm run codepush-ios && npm run codepush-android"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.6",

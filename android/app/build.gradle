@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
 //    id 'com.android.library'
     id 'com.facebook.react'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 /**
@@ -80,9 +82,13 @@ dependencies {
     implementation "com.facebook.react:react-android:0.71.7"
     implementation "com.facebook.react:hermes-android:0.71.7"
     implementation project(':react-native-svg')
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
 }
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"

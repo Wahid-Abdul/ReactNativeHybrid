@@ -25,8 +25,6 @@ class ViewController: UIViewController {
              ]
          ]
 
-//        CodePush.setDeploymentKey("fGGY7vCmj_KMaUpOi26BC2wr0NHvHRXL3_KWe")
-
 
         let jsCodeLocation = CodePush.bundleURL()!
         var jsBundle = jsCodeLocationDebug
@@ -49,16 +47,23 @@ class ViewController: UIViewController {
     }
     @IBAction func dashboardButtonPressed(_ sender: UIButton) {
         NSLog("Hello")
-         let jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios")!
+         let jsCodeLocationDebug = URL(string: "http://localhost:8081/index.bundle?platform=ios")!
          let mockData:NSDictionary = ["scores":
              [
                  ["name":"Alex", "value":"42"],
                  ["name":"Joel", "value":"10"]
              ]
          ]
-
+        let jsCodeLocation = CodePush.bundleURL()!
+        var jsBundle = jsCodeLocationDebug
+        #if DEBUG
+            jsBundle = jsCodeLocationDebug
+        #else
+            jsBundle = jsCodeLocation
+        #endif
+        
          let rootView = RCTRootView(
-             bundleURL:  jsCodeLocation,
+             bundleURL:  jsBundle,
              moduleName: "DashboardIndex",
              initialProperties: mockData as [NSObject : AnyObject],
              launchOptions: nil
