@@ -1,0 +1,72 @@
+[
+    {
+        "symbol": "ICICI BANK",
+        "exc": "NSE",
+        "orderType": "BUY",
+        "price": "1,799.98",
+        "ltp": "1,399.98",
+        "chg": "100.00",
+        "chgPer": "10",
+        "qty": 10
+    },
+    {
+        "symbol": "ICICI BANK",
+        "exc": "BSE",
+        "orderType": "SELL",
+        "price": "1,799.98",
+        "ltp": "1,399.98",
+        "chg": "-100.00",
+        "chgPer": "-10",
+        "qty": 100
+    },
+    {
+        "symbol": "ICICI BANK",
+        "exc": "NSE",
+        "orderType": "BUY",
+        "price": "1,799.98",
+        "ltp": "1,399.98",
+        "chg": "100.00",
+        "chgPer": "10",
+        "qty": 10
+    },
+    {
+        "symbol": "ICICI BANK",
+        "exc": "NSE",
+        "orderType": "BUY",
+        "price": "1,799.98",
+        "ltp": "1,399.98",
+        "chg": "100.00",
+        "chgPer": "10",
+        "qty": 10
+    },
+    {
+        "symbol": "ICICI BANK",
+        "exc": "NSE",
+        "orderType": "BUY",
+        "price": "1,799.98",
+        "ltp": "1,399.98",
+        "chg": "100.00",
+        "chgPer": "10",
+        "qty": 10
+    },
+    {
+        "symbol": "ICICI BANK",
+        "exc": "NSE",
+        "orderType": "BUY",
+        "price": "1,799.98",
+        "ltp": "1,399.98",
+        "chg": "100.00",
+        "chgPer": "10",
+        "qty": 10
+    },
+    {
+        "symbol": "ICICI BANK",
+        "exc": "BSE",
+        "orderType": "SELL",
+        "price": "1,799.98",
+        "ltp": "1,399.98",
+        "chg": "-100.00",
+        "chgPer": "-10",
+        "qty": 100
+    }
+]

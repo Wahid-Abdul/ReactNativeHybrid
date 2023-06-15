@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, AppRegistry, TouchableHighlight, BackHandler, Alert, TouchableOpacity } from "react-native";
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import BasketOrder from '../basket/BasketOrder';
+import BasketOrderSuccess from '../basket/BasketOrderSuccess';
 
 function HomeScreen() {
 	const navigation = useNavigation()
@@ -42,10 +44,16 @@ function HomeScreen() {
 	);
 }
 
+
 function SecondScreen() {
+	const navigation = useNavigation()
+
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 			<Text>Home Screen</Text>
+			<TouchableOpacity onPress={() => navigation.navigate('BasketOrder')} style={{height:50, width: 200, backgroundColor: 'lightblue', borderRadius: 10, alignItems: 'center', justifyContent: 'center'}}>
+				<Text style={{color: 'white'}}>Go to basket order screen</Text>
+			</TouchableOpacity>
 		</View>
 	);
 }
@@ -60,9 +68,13 @@ const DashboardIndex = (props: any) => {
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={({ route, navigation }) => ({
 					headerShown: false,
+					animation: 'slide_from_right',
 				})}>
 				<Stack.Screen name="Home" component={HomeScreen} />
 				<Stack.Screen name="SecondScreen" component={SecondScreen} />
+				<Stack.Screen name="BasketOrder" component={BasketOrder} />
+				<Stack.Screen name="BasketOrderSuccess" component={BasketOrderSuccess} />
+
 			</Stack.Navigator>
 		</NavigationContainer>
 	)

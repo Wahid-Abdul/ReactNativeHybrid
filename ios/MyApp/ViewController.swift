@@ -15,6 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
     @IBAction func highScoreButtonPressed(_ sender: UIButton) {
         NSLog("Hello")
          let jsCodeLocationDebug = URL(string: "http://localhost:8081/index.bundle?platform=ios")!
@@ -45,6 +47,8 @@ class ViewController: UIViewController {
 
 
     }
+    
+    
     @IBAction func dashboardButtonPressed(_ sender: UIButton) {
         NSLog("Hello")
          let jsCodeLocationDebug = URL(string: "http://localhost:8081/index.bundle?platform=ios")!

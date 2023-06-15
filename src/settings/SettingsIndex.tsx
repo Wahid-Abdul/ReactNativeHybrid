@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CodePush from 'react-native-code-push';
 import { getPercentage } from '../utils/utils';
-// const {CalendarModule} = NativeModules;
+const {CalendarModule} = NativeModules;
 
 let codePushOptions = {
   checkFrequency: codePush.CheckFrequency.ON_APP_START,
@@ -111,10 +111,15 @@ const SettingsIndex = (props: any) => {
     );
   }
 
+  const calendarLog = () => {
+    console.log("sadasdasdsads.......", NativeModules, CalendarModule)
+    // CalendarModule.createCalendarEvent("Abulllll", "India")
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.highScoresTitle}>
-        I am a Settings screen v0.0.79 !!
+        I am a Settings screen v0.0.83 !!
       </Text>
       <TouchableOpacity
         style={{
@@ -123,7 +128,18 @@ const SettingsIndex = (props: any) => {
           alignItems: 'center', justifyContent: 'center'
         }}
         onPress={onUpdateCheck}>
-        <Text>CHECK FOR UPDATES !</Text>
+        <Text>CHECK FOR UPDATES !!!</Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity
+        style={{
+          backgroundColor: 'lightgreen', borderRadius: 5,
+          width: 200, height: 50,
+          alignItems: 'center', justifyContent: 'center',
+          marginTop: 20,
+        }}
+        onPress={calendarLog}>
+        <Text>CALENDAR LOG !</Text>
       </TouchableOpacity>
 
       <View style={{ height: 100, width: 100 }}>
